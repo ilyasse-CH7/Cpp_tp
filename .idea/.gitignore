@@ -1,0 +1,48 @@
+# ----------------------------
+# Build folders
+# ----------------------------
+cmake-build-*/        # dossier de build CMake
+build/                # autre dossier de build éventuel
+
+# ----------------------------
+# CMake generated files
+# ----------------------------
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+*.xml
+
+# ----------------------------
+# Compiled binaries
+# ----------------------------
+*.exe
+*.out
+*.o
+*.obj
+*.so
+*.a
+*.dll
+*.dylib
+
+# ----------------------------
+# Editor temporary files
+# ----------------------------
+*~
+*.swp
+*.swo
+.DS_Store
+.vscode/
+.idea/
+
+# ----------------------------
+# Logs
+# ----------------------------
+*.log
+
+# ----------------------------
+# Other
+# ----------------------------
+# Ignore any temporary files you might have
+*.tmp
