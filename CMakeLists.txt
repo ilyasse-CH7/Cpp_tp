@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Scanner tous les fichiers .cpp (dans Tp1 et sous-dossiers)
-file(GLOB_RECURSE ALL_SOURCES "Tp1/**/*.cpp" "Tp1/*.cpp" "*.cpp")
+file(GLOB_RECURSE ALL_SOURCES "Cpp_tp1/**/*.cpp" "Cpp_tp1/*.cpp" "*.cpp")
 
 foreach(source_file ${ALL_SOURCES})
 
