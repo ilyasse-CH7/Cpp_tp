@@ -1,4 +1,9 @@
 #include <iostream>
+struct Tlivre
+{
+    char * auteur ;
+
+};
 
 int main() {
 
