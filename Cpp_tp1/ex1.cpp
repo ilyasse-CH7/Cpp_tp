@@ -17,6 +17,7 @@ int main ()
     }
 
     delete []tab ;
+    vv
 }*/
 
 //2
