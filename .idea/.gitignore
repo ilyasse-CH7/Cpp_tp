@@ -18,6 +18,7 @@ Makefile
 # Compiled binaries
 # ----------------------------
 *.exe
+*.txt
 *.out
 *.o
 *.obj
