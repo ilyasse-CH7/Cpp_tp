@@ -1,7 +1,6 @@
 //
 // Created by ilyasse-ch7 on 12/04/2026.
 //
-
 #include "Duree.h"
 #include<cmath>
 #include<print>
@@ -38,6 +37,7 @@ Duree::Duree(int H , int M , int S ) {
 
 void Duree::setH(float H ) {
     H = std::abs(H) ;
+
     if (H>=24) {
         std::println("erreur l'heure ne peux pas depasser 24!! ");
     }
@@ -97,3 +97,11 @@ void Duree::add_sec(int sec) {
     }
     else{S+=sec;}
 }
+
+Duree::Duree(const Duree &j)
+{
+    this->H=j.H;
+   this->M=j.M;
+    this->S=j.S;
+}
+

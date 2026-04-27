@@ -15,6 +15,8 @@ private:
 public:
     Duree();
     Duree(int H , int M , int S );
+    Duree(const Duree &j);
+    Duree operator+(const Duree& other);
 
     void setH(float H );
     void setM(float M );
