@@ -1,41 +1,33 @@
-//
-// Created by ilyasse-ch7 on 12/04/2026.
-//
-#include<iostream>
-#include"Duree.h"  //sil vous plait sans oblier .h !
-
+#include <iostream>
+#include "Duree.h"
 
 int main() {
+    Duree d1(2, 45, 30);
+    Duree d2(1, 20, 50);
 
-    //test de constrecteur pas default ;
+    Duree d3 = d1 + d2;
+    std::cout << d1 << " + " << d2 << " = " << d3 << '\n';
 
-    Duree a1 ;
-    a1.affich_heure();
+    Duree d4 = d1 - d2;
+    std::cout << d1 << " - " << d2 << " = " << d4 << '\n';
 
-    // constrecteur avec parametre
+    d1 += d2;
+    std::cout << "apres += : " << d1 << '\n';
 
-    Duree a2(4,60,40);
-    a2.affich_heure();
+    if (d1 == d3)
+        std::cout << "d1 == d3\n";
+    else
+        std::cout << "d1 != d3\n";
 
-    //setter et getters
+    if (d2 < d1)
+        std::cout << "d2 < d1\n";
+    else
+        std::cout << "d2 >= d1\n";
 
-    a2.setH(-30);
-    std::cout<< a2.getH() << '\n';
+    Duree d5;
+    std::cout << "entrer une duree (H M S) : ";
+    std::cin >> d5;
+    std::cout << "lu : " << d5 << '\n';
 
-    a1.setM(-69);
-    a1.setM(-39);
-    std::cout<< a1.getM()<< '\n';
-
-
-    //to_sec test !
-    a2.affich_heure();
-    std::cout << a2.to_sec() << '\n';
-
-    // add_sec !
-
-    a2.affich_heure();
-    a2.add_sec(-59);
-    a2.affich_heure();
-
-
+    return 0;
 }

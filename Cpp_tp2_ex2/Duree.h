@@ -1,39 +1,36 @@
-//
-// Created by ilyasse-ch7 on 12/04/2026.
-//
-
-#ifndef ILYASSE_CPP_PROJECTS_DUREE_H
-#define ILYASSE_CPP_PROJECTS_DUREE_H
-
-
+#pragma once
+#include <iostream>
+#include <cmath>
 
 class Duree {
 private:
-    int H ;
-    int M ;
-    int S ;
+    int H;
+    int M;
+    int S;
+
 public:
     Duree();
-    Duree(int H , int M , int S );
-    Duree(const Duree &j);
-    Duree operator+(const Duree& other);
+    Duree(int H, int M, int S);
+    Duree(const Duree& j);
 
-    void setH(float H );
-    void setM(float M );
-    void setS(float S );
+    void setH(float H);
+    void setM(float M);
+    void setS(float S);
 
     int getH() const;
     int getM() const;
     int getS() const;
 
     void affich_heure();
-    int to_sec();
+    int  to_sec()const;
     void add_sec(int sec);
 
+    Duree  operator+(const Duree& other) const;
+    Duree  operator-(const Duree& other) const;
+    bool   operator==(const Duree& other) const;
+    bool   operator<(const Duree& other) const;
+    Duree& operator+=(const Duree& other);
 
-
+    friend std::ostream& operator<<(std::ostream& os, const Duree& other);
+    friend std::istream& operator>>(std::istream& is, Duree& other);
 };
-
-
-
-#endif //ILYASSE_CPP_PROJECTS_DUREE_H
