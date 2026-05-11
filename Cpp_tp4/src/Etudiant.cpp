@@ -21,7 +21,7 @@ Etudiant::Etudiant(int num_ref , std::string F , int num_mod,std::vector<float> 
     numero_module = num_mod ;
     for (float x : tab) {
         if (x<0) x=-x;
-        notes.push_back(x);
+        notes.emplace_back(x);
     }
 }
 
@@ -33,6 +33,7 @@ Etudiant::Etudiant(const Etudiant &p1 ) {
 }
 
 void Etudiant::saisirEtudiant() {
+    //je verifier le signe de chaque attribut entre par le utilisateur
     std::cout<<"entre le numero de reference " << '\n';
     std::cin >> numero_ref;
     if (numero_ref < 0 )numero_ref=-numero_ref;
@@ -42,13 +43,17 @@ void Etudiant::saisirEtudiant() {
     std::getline(std::cin ,Filiere);
     std::cout<<"entre le numero de module" <<'\n';
     std::cin >> numero_module;
+
     if (numero_module<0)numero_module=-numero_module;
+
+    // manipulation de le tableau avec verification si est vide sinon je le vide
+    if (notes.empty())notes.clear();
     int x ;
     for (int i = 0 ; i < numero_module;i++) {
         std::cout<<"entre la note de module numero " << i+1 << '\n' ;
         std::cin>>x;
         if (x<0)x=-x;
-        notes.push_back(x);
+        notes.emplace_back(x);
     }
 }
 
@@ -66,7 +71,7 @@ void Etudiant::setNumeroModule(int num) {
 void Etudiant::setNotes(std::vector<float> tab) {
     for (float x : tab) {
         if (x<0) x=-x;
-        notes.push_back(x);
+        notes.emplace_back(x);
     }
 }
 
