@@ -1,0 +1,21 @@
+cmake_minimum_required(VERSION 3.28)
+project(Ilyasse_Cpp_Projects CXX)
+
+set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# 1. Collect all .cpp files, excluding the build directory automatically
+file(GLOB_RECURSE ALL_SOURCES "Cpp_tp1/*.cpp ")
+
+foreach(source_file ${ALL_SOURCES})
+    # 2. Get the filename without extension (e.g., "main" from "main.cpp")
+    get_filename_component(exe_name ${source_file} NAME_WE)
+
+    # 3. Create the executable
+    # Added the missing closing parenthesis ')' here
+    add_executable(${exe_name} ${source_file}
+    )
+
+    # Optional: Print progress so you know what's being built
+    message(STATUS "Configuring executable: ${exe_name}")
+endforeach
